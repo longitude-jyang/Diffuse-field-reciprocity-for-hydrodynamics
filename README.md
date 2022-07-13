@@ -9,11 +9,11 @@ Estimating the hydrodynamic response of an offshore structure in a random spread
 
 Realistic sea states contain waves that are dependent on frequency as well as direction. The response of an offshore structure can be sensitive to both the frequency and the heading of an incident ocean wave, and the most realistic way of ensuring that this effect is captured in a numerical simulation is to model the wave environment as a random spreading sea. For a linear system subject to a random wave excitation, the covariance matrix of the structure response can be found as:
 
-$$\huge{\mathbf{\sigma}^2 =\int\mathbf{H} \left[\int\mathbf{f}\_b\mathbf{f}\_b^\text{T} D(\theta)d\theta \right]\mathbf{H}^{*T}(\omega)S\_{\eta\eta}(\omega)d\omega}$$
+$$\huge{\mathbf{\sigma}^2 =\int\mathbf{H}(\omega) \left[\int\mathbf{f}\_b\mathbf{f}\_b^\text{T} D(\theta)d\theta \right]\mathbf{H}^{*T}(\omega)S\_{\eta\eta}(\omega)d\omega}$$
 
 The key assumption here is that the spreading function D(θ) can be a viewed as a measure for the fraction of sea states, out of a large number of ensemble, that are coming from direction θ. With this view, the expression inside the bracket is the expected cross spectrum of the blocked force by ensemble average and the covariance matrix of the hydrodynamic response can be more compactly expressed as: 
 
-$$\huge{\mathbf{\sigma}^2 =\int\mathbf{H} \mathop{\mathbb{E}}[\mathbf{f}\_b\mathbf{f}\_b^\text{T}]\mathbf{H}^{*T}(\omega)S\_{\eta\eta}(\omega)d\omega}$$
+$$\huge{\mathbf{\sigma}^2 =\int\mathbf{H}(\omega) \mathop{\mathbb{E}}[\mathbf{f}\_b\mathbf{f}\_b^\text{T}]\mathbf{H}^{*T}(\omega)S\_{\eta\eta}(\omega)d\omega}$$
 
 At first sight, it might appear that we haven’t gained any computational saving by converting the expression. However, if the spreading sea is replaced by an idealised diffuse wave field, the DFR technique can be used to turn the expectation into a simple algebra expression. 
 
